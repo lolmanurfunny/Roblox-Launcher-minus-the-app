@@ -8,6 +8,7 @@ Instructions:
 
 2. Look for the version folder that contains `RobloxPlayerLauncher.exe`
 
-3. Delete your current `RobloxPlayerLauncher.exe` and replace it with the patched one
+3. Delete your current `RobloxPlayerLauncher.exe` and replace it with the patched one;
+   https://github.com/lolmanurfunny/Roblox-Launcher-minus-the-app/raw/main/RobloxPlayerLauncher.exe
 
 :D
