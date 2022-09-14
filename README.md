@@ -2,7 +2,7 @@
 
 Literally just RobloxPlayerLauncher.exe, but it won't launch games to the Roblox App.
 
-Instructions:
+# Instructions
 
 1. Open File Explorer and go to your roblox directory ``%USERPROFILE%/AppData/Local/Roblox/Versions``
 
