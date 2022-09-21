@@ -12,3 +12,5 @@ Literally just RobloxPlayerLauncher.exe, but it won't launch games to the Roblox
    https://github.com/lolmanurfunny/Roblox-Launcher-minus-the-app/raw/main/RobloxPlayerLauncher.exe
 
 :D
+
+# Updated for version-6e0b311456564a74
