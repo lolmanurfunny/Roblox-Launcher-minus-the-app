@@ -1,6 +1,7 @@
-import os
 from sys import exit
 from time import sleep
+from os import getenv
+from os.path import exists
 from urllib.request import urlopen, urlretrieve
 from json import loads
 
@@ -9,10 +10,10 @@ a = loads(a)["clientVersionUpload"]
 print("Client version hash: "+a)
 filepath = os.getenv("LOCALAPPDATA")+"\Roblox\Versions\\"
 
-if os.path.exists(filepath):
+if exists(filepath):
     print("Found \"\Roblox\Versions\\\" folder!")
     filepath+=a
-    if os.path.exists(filepath):
+    if exists(filepath):
         print("Found \""+a+"\" folder!")
     else:
         input("[Error]: Unable to locate latest roblox client!")
