@@ -8,7 +8,7 @@ from json import loads
 a = urlopen("https://clientsettingscdn.roblox.com/v2/client-version/WindowsPlayer/channel/zflag").read()
 a = loads(a)["clientVersionUpload"]
 print("Client version hash: "+a)
-filepath = os.getenv("LOCALAPPDATA")+"\Roblox\Versions\\"
+filepath = getenv("LOCALAPPDATA")+"\Roblox\Versions\\"
 
 if exists(filepath):
     print("Found \"\Roblox\Versions\\\" folder!")
