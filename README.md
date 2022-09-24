@@ -1,6 +1,8 @@
 # Roblox-Launcher-minus-the-app
 
-A custom-made Roblox Launcher. Why would I keep patching Roblox's abhorrent launcher, when I can build my own!
+A custom-made Roblox Launcher. Why would I keep patching Roblox's abhorrent launcher, when I can build my own! 
+
+_If your Roblox files are not installed to ``%localappdata%/Roblox/Versions`` then don't open a new issue. Instead, uninstall roblox, and reinstall it but this time, don't run it as administrator! You will not in anyway benefit the maintenance of this software if you make an issue regarding the launcher not being able to find your roblox files!_
 
 # Manual Instructions
 
