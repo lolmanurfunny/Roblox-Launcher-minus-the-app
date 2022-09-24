@@ -1,6 +1,6 @@
 # Roblox-Launcher-minus-the-app
 
-Literally just RobloxPlayerLauncher.exe, but it won't launch games to the Roblox App.
+A custom-made Roblox Launcher. Why would I keep patching Roblox's abhorrent launcher, when I can build my own!
 
 # Manual Instructions
 
