@@ -4,7 +4,7 @@ A custom-made Roblox Launcher. Why would I keep patching Roblox's abhorrent laun
 
 # Manual Instructions
 
-1. Open File Explorer and go to your roblox directory ``%USERPROFILE%/AppData/Local/Roblox/Versions``
+1. Open File Explorer and go to your roblox directory ``%localappdata%/Roblox/Versions``
 
 2. Look for the version folder that contains `RobloxPlayerLauncher.exe`
 
