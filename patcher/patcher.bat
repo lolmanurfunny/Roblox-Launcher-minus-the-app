@@ -25,6 +25,6 @@ echo if you get any errors this is because the filepath doesnt exist or the scri
 
 for /D %%I in ("%LOCALAPPDATA%\whatever\Versions\version-*") do cd /D "%%I"
 
-call "%~dp0\winhttpjs.bat" "https://github.com/lolmanurfunny/Roblox-Launcher-minus-the-app/raw/main/RobloxPlayerLauncher.exe"
+call "%~dp0\src\winhttpjs.bat" "https://github.com/lolmanurfunny/Roblox-Launcher-minus-the-app/raw/main/RobloxPlayerLauncher.exe"
 
 pause>NUL
