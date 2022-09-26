@@ -2,6 +2,7 @@
 
 A custom-made Roblox Launcher. Why would I keep patching Roblox's abhorrent launcher, when I can build my own! 
 
+Poll: [Did this improve your QoL/UX on Roblox?](https://github.com/lolmanurfunny/Roblox-Launcher-minus-the-app/discussions/15)
 ## *Please read before opening an issue, thanks!*
 _If your Roblox files are not installed to ``%localappdata%/Roblox/Versions`` then don't open a new issue. Uninstall roblox, and reinstall it, but this time, don't run it as administrator! You will not in anyway benefit the maintenance of this software if you make an issue regarding the launcher not being able to find your roblox files!_
 
