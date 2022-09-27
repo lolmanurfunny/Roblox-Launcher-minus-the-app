@@ -12,7 +12,7 @@ _If your Roblox files are not installed to ``%localappdata%/Roblox/Versions`` th
 
 2. Look for the version folder that contains `RobloxPlayerLauncher`<sup> `.exe`</sup>
 
-3. Delete your current `RobloxPlayerLauncher`<sup> `.exe`</sup> and replace it with the [Custom Launcher](https://github.com/lolmanurfunny/Roblox-Launcher-minus-the-app/releases/tag/CL-v1.0.1)<sup> `.exe`</sup>
+3. Delete your current `RobloxPlayerLauncher`<sup> `.exe`</sup> and replace it with the [Custom Launcher](https://github.com/lolmanurfunny/Roblox-Launcher-minus-the-app/releases/tag/CL-v1.1.0)<sup> `.exe`</sup>
 
 # Patch Nabber Instructions
 
