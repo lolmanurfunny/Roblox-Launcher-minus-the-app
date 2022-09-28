@@ -51,8 +51,9 @@ if oof.lower() == "y".strip():
         remove(location2)
     urlretrieve("https://github.com/"+repo+"/Roblox-Launcher-minus-the-app/raw/main/audio/ouch.ogg",location2)
     print("Successfully installed oof sound.")
-    
-if oof.lower() != ("y".strip() or oof != "n".strip()):
+elif oof.lower() == "n".strip():
+    print("Skipping...")
+else:
     print("You wrote neither \"Y\" nor \"N\". Skipping...")
 
 print("This window will close in 3 seconds...")
