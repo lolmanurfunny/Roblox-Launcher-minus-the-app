@@ -1,6 +1,6 @@
 from sys import exit
 from time import sleep
-from os import getenv, linesep,system
+from os import getenv, linesep, system, remove
 from os.path import exists
 from urllib.request import urlopen, urlretrieve
 from json import loads
@@ -28,14 +28,35 @@ else:
     littleTimmyPrevention()
     exit(1)
 
-repo = "lolmanurfunny/Roblox-Launcher-minus-the-app"
 rpl = "RobloxPlayerLauncher.exe"
+
+location1 = filepath+"\\"+rpl
+location2 = filepath+"\content\sounds\ouch.ogg"
+
+repo = "lolmanurfunny/Roblox-Launcher-minus-the-app"
 latest = urlopen("https://raw.githubusercontent.com/"+repo+"/main/Custom%20Launcher/latest").read().decode().rstrip(linesep)
 #input(latest) # debuggerydoos
 print("Installing latest custom launcher from github! Version: "+latest)
-download = urlretrieve("https://github.com/"+repo+"/releases/download/"+latest+"/"+rpl,filepath+"\\"+rpl)
+if exists(location1):
+    remove(location1)
+download = urlretrieve("https://github.com/"+repo+"/releases/download/"+latest+"/"+rpl,location1)
 
-print("File is located @",download.__getitem__(0)+"\nThis window will close in 3 seconds...")
+print("File is located @",download.__getitem__(0))
+
+oof = input("Would you like to return the oof sound back? [Y/N] ")
+
+if oof.lower() == "y".strip():
+    print("Installing oof sound...")
+    if exists(location2):
+        remove(location2)
+    urlretrieve("https://github.com/"+repo+"/Roblox-Launcher-minus-the-app/raw/main/audio/ouch.ogg",location2)
+    print("Successfully installed oof sound.")
+    
+if oof.lower() != ("y".strip() or oof != "n".strip()):
+    print("You wrote neither \"Y\" nor \"N\". Skipping...")
+
+print("This window will close in 3 seconds...")
+
 for _ in range(3,0,-1):
     system("title "+"Closing in "+_.__str__())
     print('.')
