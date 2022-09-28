@@ -49,7 +49,7 @@ if oof.lower() == "y".strip():
     print("Installing oof sound...")
     if exists(location2):
         remove(location2)
-    urlretrieve("https://github.com/"+repo+"/Roblox-Launcher-minus-the-app/raw/main/audio/ouch.ogg",location2)
+    urlretrieve("https://github.com/"+repo+"/raw/main/audio/ouch.ogg",location2)
     print("Successfully installed oof sound.")
 elif oof.lower() == "n".strip():
     print("Skipping...")
