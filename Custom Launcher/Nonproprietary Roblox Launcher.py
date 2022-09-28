@@ -40,7 +40,6 @@ print("Client version hash: "+dir.split("\\").pop())
 print("Launching!")
 # Don't tell me you thought we were launching when we said we were? 🙃
 print("Took "+(time()-ts).__str__()+" seconds!")
-print("This window will close in 5 seconds.")
-sleep(5-.25)# optimized👽
+print("This window will now close.")
 exit(0)
 # :)
