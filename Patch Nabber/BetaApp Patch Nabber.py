@@ -1,6 +1,6 @@
 from sys import exit
 from time import sleep
-from os import getenv, linesep, system, remove
+from os import getenv, linesep, system
 from os.path import exists
 from urllib.request import urlopen, urlretrieve
 from json import loads
@@ -37,8 +37,6 @@ repo = "lolmanurfunny/Roblox-Launcher-minus-the-app"
 latest = urlopen("https://raw.githubusercontent.com/"+repo+"/main/Custom%20Launcher/latest").read().decode().rstrip(linesep)
 #input(latest) # debuggerydoos
 print("Installing latest custom launcher from github! Version: "+latest)
-if exists(location1):
-    remove(location1)
 download = urlretrieve("https://github.com/"+repo+"/releases/download/"+latest+"/"+rpl,location1)
 
 print("File is located @",download.__getitem__(0))
@@ -47,9 +45,7 @@ oof = input("Would you like to return the oof sound back? [Y/N] ")
 
 if oof.lower() == "y".strip():
     print("Installing oof sound...")
-    if exists(location2):
-        remove(location2)
-    urlretrieve("https://github.com/"+repo+"/raw/main/audio/ouch.ogg",location2)
+    urlretrieve("https://github.com/"+repo+"/raw/main/Audio/ouch.ogg",location2)
     print("Successfully installed oof sound.")
 elif oof.lower() == "n".strip():
     print("Skipping...")
