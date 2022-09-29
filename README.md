@@ -22,6 +22,6 @@ Python Script<sup> `.py`</sup>
 #
 Precompiled Binary<sup> `.exe`</sup>
 ###### Prerequisites: None<sup> :D</sup>
-  1. Run the [software](https://github.com/lolmanurfunny/Roblox-Launcher-minus-the-app/releases/tag/PatchNabber-v1.0.1)
+  1. Run the [software](https://github.com/lolmanurfunny/Roblox-Launcher-minus-the-app/releases/tag/PatchNabber-v1.1.0)
 
 ###### <3
