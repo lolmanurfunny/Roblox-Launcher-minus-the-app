@@ -6,6 +6,12 @@ Poll: [Did this improve your QoL/UX on Roblox?](https://github.com/lolmanurfunny
 ## *Please read before opening an issue, thanks!*
 _If your Roblox files are not installed to ``%localappdata%/Roblox/Versions`` then don't open a new issue. Uninstall roblox, and reinstall it, but this time, don't run it as administrator! You will not in anyway benefit the maintenance of this software if you make an issue regarding the launcher not being able to find your roblox files!_
 
+**If you see this error:**
+
+
+![image](https://user-images.githubusercontent.com/77128366/192942845-afa5f00a-2096-45f4-b500-543cbde14795.png)
+_**Update your Roblox** (delete the custom launcher/put it in a different directory), then **install Roblox's launcher** so that you can get the **most up-to-date roblox game client** (RobloxPlayerBeta.exe)_
+
 # Manual Instructions
 
 1. Open **Run**<sup> `⊞+R`</sup> <sub>or</sub> **File Explorer**<sup> `⊞+W`</sup> and go to your roblox directory `%localappdata%/Roblox/Versions`
