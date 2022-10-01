@@ -43,11 +43,11 @@ print("File is located @",download.__getitem__(0))
 
 oof = input("Would you like to return the oof sound back? [Y/N] ")
 
-if oof.lower() == "y".strip():
+if oof.lower().strip() == "y":
     print("Installing oof sound...")
     urlretrieve("https://github.com/"+repo+"/raw/main/Audio/ouch.ogg",location2)
     print("Successfully installed oof sound.")
-elif oof.lower() == "n".strip():
+elif oof.lower().strip() == "n":
     print("Skipping...")
 else:
     print("You wrote neither \"Y\" nor \"N\". Skipping...")
