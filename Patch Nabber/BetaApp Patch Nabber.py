@@ -1,14 +1,18 @@
 from sys import exit
 from time import sleep
-from os import getenv, linesep, system
-from os.path import exists
+from os import getenv, linesep, system, remove
+from os.path import exists, dirname, realpath
 from urllib.request import urlopen, urlretrieve
 from json import loads
+from subprocess import Popen
+
+absPath = dirname(realpath(__file__))
 
 a = urlopen("https://clientsettingscdn.roblox.com/v2/client-version/WindowsPlayer/channel/zflag").read()
 a = loads(a)["clientVersionUpload"]
 print("Client version hash: "+a)
 filepath = getenv("LOCALAPPDATA")+"\Roblox\Versions\\"
+isOld = False
 
 def littleTimmyPrevention():
     input("Did you install Roblox via running RobloxPlayerLauncher as administrator?\nTry reinstalling Roblox.\nDon't open a new issue regarding this if you installed Roblox to a non-User directory!")
@@ -20,9 +24,14 @@ if exists(filepath) and not debug:
     if exists(filepath):
         print("Found \""+a+"\" folder!")
     else:
-        print("[Error]: Unable to locate latest roblox client!")
-        littleTimmyPrevention()
-        exit(1)
+        isOld = True
+        print("[Error]: Unable to locate latest roblox client! Installing it automatically.")
+        #lmao roblox updater??!??!
+        #install robloxplayerlauncher then delete it, this is just for updating
+        setupPage = "https://setup.rbxcdn.com/{}-Roblox.exe".format(a)
+        latest = urlretrieve(setupPage, "RobloxPlayerLauncher.exe")
+        proc = Popen("{}\\RobloxPlayerLauncher.exe".format(absPath))
+        proc.wait()
 else:
     print("[Error]: Could not find the \"\Roblox\Versions\\\" folder!")
     littleTimmyPrevention()
@@ -40,6 +49,10 @@ print("Installing latest custom launcher from github! Version: "+latest)
 download = urlretrieve("https://github.com/"+repo+"/releases/download/"+latest+"/"+rpl,location1)
 
 print("File is located @",download.__getitem__(0))
+
+if isOld == True:
+    remove("{}\\RobloxPlayerLauncher.exe".format(absPath))
+
 
 oof = input("Would you like to return the oof sound back? [Y/N] ")
 
