@@ -31,9 +31,10 @@ if exists(filepath) and not debug:
         setupPage = "https://setup.rbxcdn.com/{}-Roblox.exe".format(a)
         latest = urlretrieve(setupPage, "RobloxPlayerLauncher.exe")
         proc = Popen("{}\\RobloxPlayerLauncher.exe".format(absPath))
-        proc.wait()
-else:
-    print("[Error]: Could not find the \"\Roblox\Versions\\\" folder!")
+        proc.wait()   
+elif not exists(getenv("LOCALAPPDATA")+"\\Roblox\\"):
+    #the thing doesnt exist that means it WILL error when installing, back out
+    print("[FATAL ERROR]: Cannot install modified Roblox Client to Program Files(x86)")
     littleTimmyPrevention()
     exit(1)
 
