@@ -6,13 +6,40 @@ from argparse import ArgumentParser
 from urllib.parse import unquote
 from subprocess import Popen
 #from time import sleep,time
-from os.path import dirname
+from os.path import dirname, realpath, exists
 from re import split#,subn
-from os import system
+from os import system, getenv
 from sys import exit,executable
 from ctypes import windll
+from urllib.request import urlopen, urlretrieve
+from json import loads
 windll.kernel32.SetConsoleTitleW("Nonproprietary Roblox Launcher v1.1.0 | By: lolmanurfunny <3")
 #ts = time() # benchmarking
+def littleTimmyPrevention():
+    input("Roblox has encountered a fatal error. Don't install Roblox as Administrator.")
+    
+a = urlopen("https://clientsettingscdn.roblox.com/v2/client-version/WindowsPlayer/channel/zflag").read()
+a = loads(a)["clientVersionUpload"]
+
+filepath = getenv("LOCALAPPDATA")+"\Roblox\Versions\\"
+
+absPath = dirname(realpath(__file__))
+
+
+#lemme just do some checks :tehee:
+if exists(filepath):
+    filepath+=a
+    if not exists(filepath):
+        print("[Error]: Unable to locate latest roblox client! Installing it automatically.")
+        setupPage = "https://setup.rbxcdn.com/{}-Roblox.exe".format(a)
+        latest = urlretrieve(setupPage, "RobloxPlayerLauncher.exe")
+        proc = Popen("{}\\RobloxPlayerLauncher.exe".format(absPath))
+        proc.wait()   
+elif not exists(getenv("LOCALAPPDATA")+"\\Roblox\\"):
+    #the thing doesnt exist that means it WILL error when installing, back out
+    print("[FATAL ERROR]: Cannot install modified Roblox Client to Program Files(x86)")
+    littleTimmyPrevention()
+    exit(1)
 
 def jimbo():
     system("cls");system("start https://github.com/lolmanurfunny/Roblox-Launcher-minus-the-app");exit(0)
