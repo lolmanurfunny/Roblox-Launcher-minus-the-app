@@ -3,11 +3,11 @@ from time import sleep
 from os import getenv, linesep, system
 from os.path import exists
 from urllib.request import urlopen, urlretrieve
-from json import loads
+from json import load
 
-a = urlopen("https://clientsettingscdn.roblox.com/v2/client-version/WindowsPlayer/channel/zflag").read()
-a = loads(a)["clientVersionUpload"]
-print("Client version hash: "+a)
+version = load(urlopen("https://clientsettingscdn.roblox.com/v2/client-version/WindowsPlayer/channel/zflag"))["clientVersionUpload"]
+
+print("Client version hash: "+version)
 filepath = getenv("LOCALAPPDATA")+"\Roblox\Versions\\"
 
 def littleTimmyPrevention():
