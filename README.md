@@ -3,6 +3,9 @@
 A custom-made Roblox Launcher. Why would I keep patching Roblox's abhorrent launcher, when I can build my own! 
 
 Poll: [Did this improve your QoL/UX on Roblox?](https://github.com/lolmanurfunny/Roblox-Launcher-minus-the-app/discussions/15)
+### Note for the implicitly, blissfully incompetent children:
+Learn how to read VirusTotal's results before jumping straight to accusing me of distributing "malware". For example, if it [VirusTotal] says, "1 security vendor and X sandboxes flagged this file as malicious" and you interpret that as, "OMG IT IS MALWARE, I HAVE TO SPREAD THE WORD!" then watch a tutorial on how to comprehensively read the results of VirusTotal. VirusTotal's array of security vendors are never ever going to be 100% accurate, nobody will, so if one security vendor which is set to be super strict on what a file is/does then you can almost count on an executable file being flagged as malicious, assuming it isn't signed of course. Much like a file, if I can assume you are fat, ugly and disgusting, I could be wrong, I could be correct, anti-viruses can also be wrong, they often are, these are called 'False Positives'.
+
 ## *Please read before opening an issue, thanks!*
 _If your Roblox files are not installed to ``%localappdata%/Roblox/Versions`` then don't open a new issue. Uninstall roblox, and reinstall it, but this time, don't run it as administrator! You will not in anyway benefit the maintenance of this software if you make an issue regarding the launcher not being able to find your roblox files!_
 
