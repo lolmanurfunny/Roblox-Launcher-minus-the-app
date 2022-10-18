@@ -52,7 +52,7 @@ latestScript = urlopen("https://raw.githubusercontent.com/lolmanurfunny/Roblox-L
 with open("RobloxPlayerLauncher.py", "wb") as f:
     f.write(latestScript.read())
 
-system('cmd /c "pyinstaller --onefile --icon="{}\\Icons\\appIcon.ico" RobloxPlayerLauncher.py"'.format(absPath))
+system('cmd /c "pyinstaller --onefile RobloxPlayerLauncher.py"')
 system('cmd /c "xcopy {}\\dist\\RobloxPlayerLauncher.exe  {} /y /s"'.format(absPath, filepath))
 remove("{}\\RobloxPlayerLauncher.py".format(absPath))
 rmtree("{}\\build".format(absPath))
