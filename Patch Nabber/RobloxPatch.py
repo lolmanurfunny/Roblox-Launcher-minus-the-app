@@ -4,7 +4,7 @@ from os import getenv, linesep, system, remove
 from shutil import rmtree
 from os.path import exists, dirname, realpath
 from urllib.request import urlopen, urlretrieve
-from json import loads
+from json import load
 from subprocess import Popen
 
 absPath = dirname(realpath(__file__))
@@ -15,24 +15,23 @@ def littleTimmyPrevention():
 isOld = False
 
 
-a = urlopen("https://clientsettingscdn.roblox.com/v2/client-version/WindowsPlayer/channel/zflag").read()
-a = loads(a)["clientVersionUpload"]
-print("Client version hash: "+a)
+ver = load(urlopen("https://clientsettingscdn.roblox.com/v2/client-version/WindowsPlayer/channel/zflag"))["clientVersionUpload"]
+print("Client version hash: "+ver)
 
 filepath = getenv("LOCALAPPDATA")+"\Roblox\Versions\\"
 
 debug = False
 if exists(filepath) and not debug:
     print("Found \"\Roblox\Versions\\\" folder!")
-    filepath+=a
+    filepath+=ver
     if exists(filepath):
-        print("Found \""+a+"\" folder!")
+        print("Found \""+ver+"\" folder!")
     else:
         isOld = True
         print("[Error]: Unable to locate latest roblox client! Installing it automatically.")
         #lmao roblox updater??!??!
         #install robloxplayerlauncher then delete it, this is just for updating
-        setupPage = "https://setup.rbxcdn.com/{}-Roblox.exe".format(a)
+        setupPage = "https://setup.rbxcdn.com/{}-Roblox.exe".format(ver)
         latest = urlretrieve(setupPage, "RobloxPlayerLauncher.exe")
         proc = Popen("{}\\RobloxPlayerLauncher.exe".format(absPath))
         proc.wait()   
