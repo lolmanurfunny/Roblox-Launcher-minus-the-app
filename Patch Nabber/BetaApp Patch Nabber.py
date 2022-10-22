@@ -5,8 +5,10 @@ from os.path import exists, dirname, realpath
 from urllib.request import urlopen, urlretrieve
 from json import load
 from subprocess import Popen
+from pathlib import Path
 
 absPath = dirname(realpath(__file__))
+downloads_path = str(Path.home() / "Downloads");
 
 ver = load(urlopen("https://clientsettingscdn.roblox.com/v2/client-version/WindowsPlayer/channel/zflag"))["clientVersionUpload"]
 print("Client version hash: "+ver)
@@ -28,8 +30,9 @@ if exists(filepath) and not debug:
         #lmao roblox updater??!??!
         #install robloxplayerlauncher then delete it, this is just for updating
         setupPage = "https://setup.rbxcdn.com/{}-Roblox.exe".format(ver)
-        latest = urlretrieve(setupPage, "RobloxPlayerLauncher.exe")
-        proc = Popen("{}\\RobloxPlayerLauncher.exe".format(absPath))
+        #go to downloads path because an error occurs when you download from a directory elsewhere
+        latest = urlretrieve(setupPage, "{}//RobloxPlayerLauncher.exe".format(downloads_path))
+        proc = Popen("{}\\RobloxPlayerLauncher.exe".format(downloads_path))
         proc.wait()   
 elif not exists(getenv("LOCALAPPDATA")+"\\Roblox\\"):
     #the thing doesnt exist that means it WILL error when installing, back out
@@ -51,7 +54,7 @@ download = urlretrieve("https://github.com/"+repo+"/releases/download/"+latest+"
 print("File is located @",download.__getitem__(0))
 
 if isOld == True:
-    remove("{}\\RobloxPlayerLauncher.exe".format(absPath))
+    remove("{}\\RobloxPlayerLauncher.exe".format(downloads_path))
 
 
 oof = input("Would you like to return the oof sound back? [Y/N] ")

@@ -6,9 +6,10 @@ from os.path import exists, dirname, realpath
 from urllib.request import urlopen, urlretrieve
 from json import load
 from subprocess import Popen
+from pathlib import Path
 
 absPath = dirname(realpath(__file__))
-
+downloads_path = str(Path.home() / "Downloads");
 def littleTimmyPrevention():
     input("Did you install Roblox via running RobloxPlayerLauncher as administrator?\nTry reinstalling Roblox.\nDon't open a new issue regarding this if you installed Roblox to a non-User directory!")
     
@@ -32,8 +33,9 @@ if exists(filepath) and not debug:
         #lmao roblox updater??!??!
         #install robloxplayerlauncher then delete it, this is just for updating
         setupPage = "https://setup.rbxcdn.com/{}-Roblox.exe".format(ver)
-        latest = urlretrieve(setupPage, "RobloxPlayerLauncher.exe")
-        proc = Popen("{}\\RobloxPlayerLauncher.exe".format(absPath))
+        #go to downloads path because an error occurs when you download from a directory elsewhere
+        latest = urlretrieve(setupPage, "{}//RobloxPlayerLauncher.exe".format(downloads_path))
+        proc = Popen("{}\\RobloxPlayerLauncher.exe".format(downloads_path))
         proc.wait()   
 elif not exists(getenv("LOCALAPPDATA")+"\\Roblox\\"):
     #the thing doesnt exist that means it WILL error when installing, back out
@@ -59,7 +61,7 @@ rmtree("{}\\build".format(absPath))
 remove("{}\\RobloxPlayerLauncher.spec".format(absPath))
 rmtree("{}\\dist".format(absPath))
 if isOld == True:
-    remove("{}\\RobloxPlayerLauncher.exe".format(absPath))
+    remove("{}\\RobloxPlayerLauncher.exe".format(downloads_path))
 
 
 oof = input("Would you like to return the oof sound back? [Y/N] ")
