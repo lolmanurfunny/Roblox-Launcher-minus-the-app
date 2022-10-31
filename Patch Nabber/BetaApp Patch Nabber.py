@@ -16,9 +16,9 @@ def littleTimmyPrevention():
 debug = False
 if exists(filepath) and not debug:
     print("Found \"\Roblox\Versions\\\" folder!")
-    filepath+=a
+    filepath+=version
     if exists(filepath):
-        print("Found \""+a+"\" folder!")
+        print("Found \""+version+"\" folder!")
     else:
         print("[Error]: Unable to locate latest roblox client!")
         littleTimmyPrevention()
