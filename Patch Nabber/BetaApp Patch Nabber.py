@@ -1,6 +1,6 @@
 from sys import exit
 from time import sleep
-from os import getenv, system, remove
+from os import getenv, system
 from shutil import rmtree
 from os.path import exists
 from urllib.request import urlopen, urlretrieve
