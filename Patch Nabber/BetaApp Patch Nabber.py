@@ -1,6 +1,6 @@
 from sys import exit
 from time import sleep
-from os import getenv, linesep, system
+from os import getenv, system, rename
 from os.path import exists
 from urllib.request import urlopen, urlretrieve
 from json import loads
@@ -28,26 +28,42 @@ else:
     littleTimmyPrevention()
     exit(1)
 
-rpl = "RobloxPlayerLauncher.exe"
+# rpl = "RobloxPlayerLauncher.exe"
 
-location1 = filepath+"\\"+rpl
-location2 = filepath+"\content\sounds\ouch.ogg"
+# location1 = filepath+"\\"+rpl
+ExtraContent = filepath+"\ExtraContent"
+
+places = ExtraContent+"\\places"
+# 🤓 (anyone else notice how there's no skin tone for the nerd emoji, bros perma asian)
+UniversalApp = ExtraContent+"\\LuaPackages\\UniversalApp"
+
+ouch = filepath+"\content\sounds\ouch.ogg"
+
+# places folder is the only one that matters here, but why not also prevent roblox from loading uNiVeRSaLaPp too while we're at it.
+if exists(places) and not debug:
+    rename(places,ExtraContent+"\\places_But_better") # not adding an "else" block if this doesn't work on your first execution per update (don't fucking make an issue)
+    if exists(UniversalApp):
+        rename(UniversalApp,ExtraContent+"\\LuaPackages\\"+"shitty idea on roblox's part ngl")
+# lord forgive me for doing this even though at the end of the day I'm still parting the sea.
 
 repo = "lolmanurfunny/Roblox-Launcher-minus-the-app"
-latest = urlopen("https://raw.githubusercontent.com/"+repo+"/main/Custom%20Launcher/latest").read().decode().rstrip(linesep)
+# latest = urlopen("https://raw.githubusercontent.com/"+repo+"/main/Custom%20Launcher/latest").read().decode().rstrip(linesep)
 #input(latest) # debuggerydoos
-print("Installing latest custom launcher from github! Version: "+latest)
-download = urlretrieve("https://github.com/"+repo+"/releases/download/"+latest+"/"+rpl,location1)
+# print("Installing latest custom launcher from github! Version: "+latest)
+# download = urlretrieve("https://github.com/"+repo+"/releases/download/"+latest+"/"+rpl,location1)
 
-print("File is located @",download.__getitem__(0))
+# print("File is located @",download.__getitem__(0))
+
+
+
 
 oof = input("Would you like to return the oof sound back? [Y/N] ")
 
-if oof.lower().strip() == "y":
+if oof.lower() == "y".strip():
     print("Installing oof sound...")
-    urlretrieve("https://github.com/"+repo+"/raw/main/Audio/ouch.ogg",location2)
+    urlretrieve("https://github.com/"+repo+"/raw/main/Audio/ouch.ogg",ouch)
     print("Successfully installed oof sound.")
-elif oof.lower().strip() == "n":
+elif oof.lower() == "n".strip():
     print("Skipping...")
 else:
     print("You wrote neither \"Y\" nor \"N\". Skipping...")
