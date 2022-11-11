@@ -15,7 +15,8 @@ _If your Roblox files are not installed to ``%localappdata%/Roblox/Versions`` th
   <i><b>Update your Roblox</b> (delete the custom launcher/put it in a different directory), then <b>install Roblox's launcher</b> so that you can get the <b>most up-to-date roblox game client</b> (RobloxPlayerBeta.exe)</i>
 </details>
 
-# Manual Instructions
+# Manual Instructions 
+### (Currently doesn't work, see latest release of Patch Nabber)
 
 1. Open **Run**<sup> `⊞+R`</sup> <sub>or</sub> **File Explorer**<sup> `⊞+W`</sup> and go to your roblox directory `%localappdata%/Roblox/Versions`
 
@@ -31,6 +32,6 @@ Python Script<sup> `.py`</sup>
 #
 Precompiled Binary<sup> `.exe`</sup>
 ###### Prerequisites: None<sup> :D</sup>
-  1. Run the [software](https://github.com/lolmanurfunny/Roblox-Launcher-minus-the-app/releases/tag/PatchNabber-v1.1.0)
+  1. Run the [software](../releases/latest)
 
 ###### <3
