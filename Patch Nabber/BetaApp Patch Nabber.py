@@ -8,7 +8,10 @@ from json import load
 
 repo = "lolmanurfunny/Roblox-Launcher-minus-the-app"
 
-version = load(urlopen("https://clientsettingscdn.roblox.com/v2/client-version/WindowsPlayer/channel/zflag"))["clientVersionUpload"]
+try:
+    version = load(urlopen("https://clientsettingscdn.roblox.com/v2/client-version/WindowsPlayer/channel/zflag"))["clientVersionUpload"]
+except:
+    version = str(urlopen("http://setup.roblox.com/version.txt").read()).split("'")[1]
 
 print("Client version hash: "+version)
 filepath = getenv("LOCALAPPDATA")+"\\Roblox\\Versions\\"
@@ -56,6 +59,6 @@ print("This window will close in 3 seconds...")
 
 for _ in range(3,0,-1):
     system("title "+"Closing in "+_.__str__())
-    print('.')
+    print(".", end="")
     sleep(1)
 exit(0)
