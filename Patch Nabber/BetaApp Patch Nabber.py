@@ -5,10 +5,18 @@ from shutil import rmtree
 from os.path import exists
 from urllib.request import urlopen, urlretrieve
 from json import load
+from winreg import HKEY_CURRENT_USER, OpenKeyEx, QueryValueEx
 
 repo = "lolmanurfunny/Roblox-Launcher-minus-the-app"
 
-version = load(urlopen("https://clientsettingscdn.roblox.com/v2/client-version/WindowsPlayer/channel/zflag"))["clientVersionUpload"]
+try:
+    version = load(urlopen("https://clientsettingscdn.roblox.com/v2/client-version/WindowsPlayer/channel/zflag"))["clientVersionUpload"]
+except:
+    try:
+        version = str(urlopen("http://setup.roblox.com/version.txt").read()).split("'")[1]
+    except:
+        key = OpenKeyEx(HKEY_CURRENT_USER, r"Software\ROBLOX Corporation\Environments\roblox-player\Versions")
+        version = QueryValueEx(key, "version0")[0]
 
 print("Client version hash: "+version)
 filepath = getenv("LOCALAPPDATA")+"\\Roblox\\Versions\\"
@@ -56,6 +64,6 @@ print("This window will close in 3 seconds...")
 
 for _ in range(3,0,-1):
     system("title "+"Closing in "+_.__str__())
-    print('.')
+    print(".", end="")
     sleep(1)
 exit(0)
